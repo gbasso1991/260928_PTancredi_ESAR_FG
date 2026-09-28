@@ -198,7 +198,7 @@ print('-'*50)
 SAR_Co, tau_Co, Hc_Co = extraer_SAR_tau(resultados_Co)
 res_Co=[]
 #%% ploteo ciclos
-fig00, axs =plt.subplots(1,2,figsize=(12,6),constrained_layout=True,sharey=True,sharex=True)
+fig01, axs =plt.subplots(1,2,figsize=(12,6),constrained_layout=True,sharey=True,sharex=True)
 axs[0].set_ylabel('M (A/m)')
 
 axs[0].set_title('170 kHz',loc='left')
@@ -242,7 +242,7 @@ print('-'*50)
 SAR_Fe, tau_Fe, Hc_Fe = extraer_SAR_tau(resultados_Fe)
 res_Fe=[]
 #%% ploteo ciclos
-fig10, axs =plt.subplots(1,2,figsize=(12,6),constrained_layout=True,sharey=True,sharex=True)
+fig02, axs =plt.subplots(1,2,figsize=(12,6),constrained_layout=True,sharey=True,sharex=True)
 axs[0].set_ylabel('M (A/m)')
 axs[0].set_ylabel('M (A/m)')
 
@@ -286,7 +286,7 @@ print('-'*50)
 SAR_Zn, tau_Zn, Hc_Zn = extraer_SAR_tau(resultados_Zn)
 res_Zn=[]
 #%% ploteo ciclos
-fig10, axs =plt.subplots(1,2,figsize=(12,6),constrained_layout=True,sharey=True,sharex=True)
+fig03, axs =plt.subplots(1,2,figsize=(12,6),constrained_layout=True,sharey=True,sharex=True)
 axs[0].set_ylabel('M (A/m)')
 axs[0].set_ylabel('M (A/m)')
 
@@ -310,7 +310,11 @@ for a in axs:
     a.legend(loc='upper left',frameon=True,shadow=True,title='ESAR (W/g)')
 plt.suptitle(f'Ciclos promedio {nombre_Zn} \n170 & 265 kHz - 23 & 46 kA/m\nC = {conc_Zn:.1f} g/L')
 
-#%%
+#%% Salvo figuras
+
+fig01.savefig('01_ciclos_265-170_46-29_Co.png',dpi=300)
+fig02.savefig('01_ciclos_265-170_46-29_Fe.png',dpi=300)
+fig03.savefig('01_ciclos_265-170_46-29_Zn.png',dpi=300)
 
 
 #%% Normalizo ciclos por concentracion y ploteo comparativo
